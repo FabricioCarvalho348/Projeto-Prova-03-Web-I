@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projeto Tapiocas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Escolha sua Comida</h1>
+
+    <div class="food-selection">
+        <label for="food">Comida:</label>
+        <select id="food" onchange="carregarDetalhesDasComidas(); atualizarPrecoTotal();">
+            <option value="0">Selecione...</option>
+        </select>
+    </div>
+
+    <div class="price-display">
+        <h2>Preço Total: R$ <span id="totalPrice">0.00</span></h2>
+    </div>
+
+    <button id="showRecheiosBtn" class="show-recheios-button" onclick="abrirModalDeRecheios()" disabled>Escolher recheios</button>
+
+    <div id="recheiosModal" class="modal">
+        <div class="modal-content">
+            <h3>Escolha os recheios:</h3>
+            <div id="recheiosList" class="recheios-list"></div>
+            <button onclick="fecharModalDeRecheios()" class="close-button">Fechar</button>
+        </div>
+    </div>
+
+    <div class="cpf-input">
+        <label for="cpf">CPF do comprador:</label>
+        <input type="text" id="cpf" placeholder="Digite seu CPF">
+    </div>
+
+    <div class="actions">
+        <button onclick="limparItensSelecionados()" class="clear-button">Limpar</button>
+        <button onclick="processarPagamento()" class="pay-button">Pagar</button>
+        <button onclick="exibirHistorico()" class="view-history-button">Ver Histórico</button>
+    </div>
+
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <h2>Histórico de Compras</h2>
+            <ul id="historyList"></ul>
+            <button onclick="fecharHistorico()">Fechar</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
