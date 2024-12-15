@@ -39,4 +39,8 @@ Execute as querys que estão no arquivo desse projeto em QuerysSql para criaçã
 
 com isso feito o projeto pode ser executado tranquilamente na IDE IntelliJ 
 
+Para acessar o frontend e utilizar o site acesse:
+
+localhost:8080/index.html
+
 
